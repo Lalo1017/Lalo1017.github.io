@@ -32,12 +32,11 @@ module.exports = function (config) {
       ]
     },
     reporters: ['progress', 'kjhtml'],
-    browsers: ['Chrome'],
-    browsers: ['ChromeHeadlessCI'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
     customLaunchers: {
-      ChromeHeadlessCI:{
+      ChromeHeadlessCI: {
         base: 'ChromeHeadless',
-        flags: ['—-no-sandbox']
+        flags: ['--no-sandbox']
       }
     },
     singleRun:false,
