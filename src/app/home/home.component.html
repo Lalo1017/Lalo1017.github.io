@@ -1,0 +1,22 @@
+<div class="home-summary">
+    <span>Add a life goal</span>
+    <span>Your goal list ({{ metas.length }})</span>
+</div>
+
+<form #myform="ngForm" (ngSubmit)="submit()">
+    <div class="home-container">
+        <div class="container-add">
+            <span class="container-add-title">Utiliza este form para agregar una nueva meta</span>
+            <input type="text" id="meta" name="meta" class="container-add-input" [(ngModel)]="form.new_goal" required>
+            <button type="submit" class="container-add-button" [disabled]="myform.invalid" >Agregar</button>
+        </div>
+        <div class="container-cards">
+            @for (item of metas; track item.id) {
+                <div class="card-meta">
+                    <button type="button" class="card-delete" (click)="deleteElement(item)">Eliminar</button>
+                    <span class="card-text">{{ item.meta }}</span>
+                </div>
+            }
+        </div>
+    </div>
+</form>
