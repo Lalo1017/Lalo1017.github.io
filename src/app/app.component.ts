@@ -8,6 +8,8 @@ import { Component, signal } from '@angular/core';
 
 export class AppComponent {
   
+  title = "lifegoals";
+
   isAboutVisible = signal(false);
   showElement(val : boolean) {
     this.isAboutVisible.set(val);
