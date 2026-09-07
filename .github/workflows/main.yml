@@ -1,4 +1,4 @@
-name: Angular_DockerImage 
+name: Angular_DockerImage_2
 on:
   push:
     branches: [ master ] 
