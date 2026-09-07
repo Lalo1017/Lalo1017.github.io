@@ -27,8 +27,8 @@ jobs:
     - name: Download and run the Docker base image 
       run: docker run -d --name http_base httpd 
     - name: copy model to the Docker image 
-      run: docker cp docs/. http_base:/usr/local/apache2/ htdocs
+      run: docker cp docs/. http_base:/usr/local/apache2/htdocs
     - name: Build the custom Docker image 
-      run: docker commit --change “ENV MODEL_NAME http_base” http_base ${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}
+      run: docker commit --change 'ENV MODEL_NAME http_base' http_base ${{secrets.DOCKER_USER}}/lifegoals:${{ github.sha }}
     - name: Docker Push 
-      run: docker push ${{secrets.DOCKER_USER}}/mycv:${{ github.sha }}
+      run: docker push ${{secrets.DOCKER_USER}}/lifegoals:${{ github.sha }}
